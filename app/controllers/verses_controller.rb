@@ -1,5 +1,6 @@
 class VersesController < ApplicationController
 
+  # FIXTHIS - should not be using globals
   $verses = ["This is the song that never ends...",
             "Yes it goes on and on my friends...",
             "Some people started singing it, not knowing what it was...",
