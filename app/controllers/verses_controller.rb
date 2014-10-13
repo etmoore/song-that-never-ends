@@ -6,17 +6,27 @@ class VersesController < ApplicationController
               "Some people started singing it, not knowing what it was...",
               "And they'll just keep on singing it forever just because"]
     @verse_index = 0
-    @current_verse = @verses[@verse_index]
+    @next_verse = @verses[@verse_index]
   end
 
   def show
     render: verse
+    increment_index
+    get_next_verse
   end
 
   private
 
-  def set_next_verse
-    @next_verse
+  def increment_index
+    if @verse_index < 4
+      @verse_index += 1
+    else
+      @verse_index = 0
+    end
+  end
+
+  def get_next_verse
+    @next_verse = @verses[@verse_index]
   end
 
 end
