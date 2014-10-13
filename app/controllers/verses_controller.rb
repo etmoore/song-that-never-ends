@@ -9,13 +9,12 @@ class VersesController < ApplicationController
     session[:next_verse] ||= -1
     increment_index
     get_next_verse
-    render :verse
+    render :show
   end
 
   private
 
   def increment_index
-
     if session[:next_verse] < 3
       session[:next_verse] += 1
     else
